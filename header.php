@@ -28,7 +28,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding container cf">
           <a id="logo" class ="s" href="/" title="Return to the homepage" id="logo">
-            <img src="wp-content/themes/_smerope/images/logomerope.jpeg" alt="Nike logo" />
+            <img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/_smerope/images/logomerope.jpeg" alt="Nike logo" />
           </a>
 			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -38,9 +38,12 @@
 			<p class="site-description s"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+    <nav role="navigation" class="light-blue lighten-1 bloccato">
+    <div class="nav-wrapper container">
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'container' =>'' , 'menu_class' =>'right hide-on-med-and-down')); ?> 
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ,'items_wrap'=>'<ul id="nav-mobile" class="side-nav right-aligned">%3$s</ul>', 'container' =>'')); ?> 
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

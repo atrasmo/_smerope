@@ -528,9 +528,10 @@ th {
 
 #logo img
 {
-  width:120px;
+  width:180px;
   display : block;
   margin : 0 auto;
+  padding-top : 1rem;
 }
 
 .site-title{
