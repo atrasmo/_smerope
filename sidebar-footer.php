@@ -1,0 +1,16 @@
+<?php
+/**
+ * The Footer Sidebar
+ *
+ * @package _s
+ */
+
+if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
+	return;
+}
+?>
+<div id="supplementary">
+	<div id="footer-sidebar" class="footer-sidebar widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+	</div><!-- #footer-sidebar -->
+</div><!-- #supplementary -->

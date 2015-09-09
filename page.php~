@@ -15,7 +15,7 @@
 get_header(); ?>
 <div id ="pagecontainer" class="container">
  <div class="row">
-    <div class="col l2 m3 hide-on-med-and-down">
+    <div class="col l2 m3 s12">
     <?php get_sidebar(); ?>
   </div>
   <div class="col l8 m9 s12">

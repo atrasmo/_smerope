@@ -23,28 +23,38 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content" alt="skip to content" ><?php esc_html_e( 'Vai al contenuto', '_s' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding container cf">
-          <a id="logo" class ="s" href="/" title="Return to the homepage" id="logo">
-            <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/themes/_smerope/images/logomerope.jpeg" alt="Nike logo" />
+		<div class="site-branding cf">
+          <a id="logo" class ="s" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> title="Ritorna alla homepage">
+            <img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/_smerope/images/logomerope.jpeg" alt="logo della scuola" />
           </a>
 			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title s"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<h1 class="site-title s"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php endif; ?>
 			<p class="site-description s"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
 
-    <nav role="navigation" class="light-blue lighten-1 bloccato">
+    <nav role="navigation" class="main-navigation indigo darken-4 bloccato">
     <div class="nav-wrapper container">
-      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'container' =>'' , 'menu_class' =>'right hide-on-med-and-down')); ?> 
-      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ,'items_wrap'=>'<ul id="nav-mobile" class="side-nav right-aligned">%3$s</ul>', 'container' =>'')); ?> 
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' , 'container' =>'' , 'menu_class' =>'left hide-on-med-and-down')); ?> 
+
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'menu_globale', 'menu_id' => 'menu_globale' ,'items_wrap'=>'<ul id="nav-mobile" class="side-nav right-aligned">%3$s</ul>', 'container' =>'')); ?> 
+  		
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><span class="material-icons" role="presentation">menu</span></a>
+
     </div>
+    <?php get_search_form(); ?>
 		</nav><!-- #site-navigation -->
+    <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+        <?php if(function_exists('bcn_display'))
+        {
+            bcn_display();
+        }?>
+    </div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

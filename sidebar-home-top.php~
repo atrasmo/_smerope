@@ -1,0 +1,14 @@
+<?php
+/**
+ * The Footer Sidebar
+ *
+ * @package _s
+ */
+
+if ( ! is_active_sidebar( 'sidebar-home-top' ) ) {
+	return;
+}
+?>
+	<div id="sidebar-home-top" class="sidebar-home-top widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-home-top' ); ?>
+	</div><!-- #footer-sidebar -->

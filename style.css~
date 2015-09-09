@@ -2,12 +2,12 @@
 Theme Name: _smerope
 Theme URI: http://underscores.me/
 Author: Trasmondi Alessandro
-Author URI: forked from http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Author URI: forked from _s http://automattic.com/
+Description: Tema istituto comprensivo IC Via Merope
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: _s
+Text Domain: _smerope
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -32,6 +32,7 @@ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+   background-color : #F9F9F9
 }
 
 /**
@@ -41,6 +42,13 @@ html {
 body {
   margin: 0;
 }
+
+.site-header {
+  background-color: #e9f4fa;
+
+}
+
+
 
 
 /*--------------------------------------------------------------
@@ -518,7 +526,58 @@ th {
  * 2. 
  */
  
- 
+
+#main > header {
+    background-color: #f0f0f0;
+    margin: 0.5rem 0 1rem;
+}
+
+#main header h3 {
+    font-size : 1.214rem!important;
+    text-transform : uppercase;
+}
+
+hr.separator {
+    height: 1px;
+    margin: 40px 0px;
+    background-image: -moz-linear-gradient(left center , transparent, rgba(0, 0, 0, 0.1), transparent);
+    border: 0px none;
+}
+
+#primary-menu li a{
+        padding-top: 0px;
+        padding-right: 15px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+}
+
+.breadcrumbs {
+    font-family: Verdana;
+    font-size: 0.8em;
+    font-style: italic;
+    width:95%;
+    margin : 0 auto;
+}
+
+#secondary .widget {
+    padding-left: 3px;
+}
+
+.attachment-post-thumbnail.wp-post-image {
+    height: auto;
+    max-width: 100%;
+}
+
+body.customize-support {
+
+}
+
+.widget-area h2 {
+    font-size: 1.2rem;
+}
+.entry-header h2 {
+    font-size: 2.5rem;
+} 
 #logo
 {
   float: left;
@@ -531,6 +590,7 @@ th {
   width:180px;
   display : block;
   margin : 0 auto;
+  padding-top : 1rem;
 }
 
 .site-title{
@@ -538,6 +598,7 @@ th {
   width:60%;
   max-width:100%;
   text-align: center;
+  font-size: 4vmin;
 }
 .site-description{
   float: left;
@@ -546,8 +607,102 @@ th {
   text-align: center;
 }
 
+.content-area{
+font-size:1.2em;
+}
 
-@media only screen and (max-width : 480px) {
+nav .container {
+    width: 95%;
+}
+
+
+.site-header .search-form {
+    position: absolute;
+    right: 20px;
+    top: 1px;
+}
+form {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+
+.main-navigation {
+    clear: both;
+    margin: 0 auto;
+    min-height: 45px;
+    position: relative;
+    z-index:1000;
+}
+.search-form .search-submit {
+    display: none;
+}
+
+
+.site-header .search-field {
+    background-color: transparent;
+    background-image: url("images/search-icon.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border: medium none;
+    cursor: pointer;
+    height: 37px;
+    margin: 3px 0;
+    padding: 0 0 0 34px;
+    position: relative;
+    transition: width 400ms ease 0s, background 400ms ease 0s;
+    width: 1px;
+}
+
+
+.site-header .search-field:focus {
+    background-color: #fff;
+    border: 2px solid #c3c0ab;
+    cursor: text;
+    outline: 0 none;
+    width: 230px;
+}
+
+
+#pagecontainer {
+    
+    width: 95%;
+ }
+
+.date::before {
+    content: "today";
+    font-family: "Material Icons";
+}
+
+.listing-item:before,
+.listing-item:after{
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.listing-item:after {
+    clear: both;
+}
+
+.listing-item >a{
+    float: left;
+}                                               
+.listing-item .date{
+    float: right;
+}     
+
+[id^="text-"] {
+
+    border : 1px dashed green;
+
+}
+
+@media only screen and (max-width : 601px) {
+
+
 
 #logo , .s {
     float: none;
@@ -566,9 +721,20 @@ nav .button-collapse {
     float: right !important ;
 }
 
+.site-header .search-form {
+    left: 20px;
+    right: 0px;
 }
 
- 
+}
+/* hack for accessibility:  use <span> otherwhise <i> tag
+ */  
+
+nav .button-collapse span {
+    font-size: 2.7rem;
+    height: 56px;
+    line-height: 56px; 
+}
   
 /* Smartphones (portrait and landscape) ----
 -------
